@@ -6,6 +6,12 @@ from .models import Employee
 from .serializers import EmployeeSerializer
 import json
 
+class EmployeeListView(APIView):
+    def get(self, request):
+        employees = Employee.objects.all()
+        serializer = EmployeeSerializer(employees, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 class EmployeeView(APIView):
 
     def post(self, request):
