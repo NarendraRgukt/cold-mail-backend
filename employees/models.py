@@ -6,7 +6,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, blank=True, null=True)
     company_name = models.CharField(max_length=255)
-    role_name = models.CharField(max_length=100)
+    role_name = models.CharField(max_length=255)
     linkedin_profile = models.URLField(blank=True, null=True)
     phone_number = models.CharField(max_length=20, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
