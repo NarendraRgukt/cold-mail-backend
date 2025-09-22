@@ -6,6 +6,11 @@ from .models import Employee
 from .serializers import EmployeeSerializer
 import json
 
+class EmployeeCountView(APIView):
+    def get(self, request):
+        count = Employee.objects.count()
+        return Response({"employee_count": count}, status=status.HTTP_200_OK)
+
 class EmployeeListView(APIView):
     def get(self, request):
         employees = Employee.objects.all()

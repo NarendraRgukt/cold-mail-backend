@@ -1,9 +1,10 @@
 from django.urls import path
-from employees.views import EmployeeView,BulkEmployeeUploadView,EmployeeListView
+from employees.views import EmployeeView,BulkEmployeeUploadView,EmployeeListView,EmployeeCountView
 
 urlpatterns = [
     path("employees/", EmployeeView.as_view()),             # POST
     path("employees/<uuid:pk>/", EmployeeView.as_view()), 
      path("employees/bulk-upload/", BulkEmployeeUploadView.as_view()), 
       path("get/employees/", EmployeeListView.as_view(), name="employee-list"),
+      path("employees/count/", EmployeeCountView.as_view(), name="employee-count"),
 ]
