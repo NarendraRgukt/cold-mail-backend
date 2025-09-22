@@ -34,7 +34,7 @@ class EmployeeView(APIView):
 
 
 class BulkEmployeeUploadView(APIView):
-    async def post(self, request):
+    def post(self, request):
         file = request.FILES.get("file")
         if not file:
             return Response({"error": "No file uploaded"}, status=status.HTTP_400_BAD_REQUEST)
